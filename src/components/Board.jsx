@@ -11,14 +11,14 @@ export const Board = () => {
     const dispatch = useDispatch()
 
     const handleClick = (id) => {
-      if (!winner && moves !== 9) dispatch(addMotion(id))
+      if (!winner) dispatch(addMotion(id))
     }
 
 
   return (
     <div className='px-6'>
 
-      { winner && moves !==9 && 
+      { winner  && 
             <h2 className='text-4xl md:text-6xl mb-6 text-white'>Winner is <span className={`px-2 ${winner === 'X' ? 'text-red-600' : 'text-blue-600'} font-bold`}>{winner}</span>!</h2>
       } 
 
